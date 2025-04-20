@@ -37,7 +37,7 @@ public class Jeopardy implements ActionListener {
 	private JPanel quizPanel;
 	private int score = 0;
 	private JLabel scoreBox = new JLabel("0");
-	private int buttonCount = 0;
+	private int buttonCount = 0; 
 	private Sound jeopardyThemeClip;
 
 
@@ -47,24 +47,23 @@ public class Jeopardy implements ActionListener {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		quizPanel = new JPanel();
 		frame.setLayout(new BorderLayout());
-
 		// 1. Make the frame show up
-
+		frame.setVisible(true);
 		// 2. Give your frame a title
-
+		frame.setTitle("JEOPARDY!");
 		// 3. Create a JPanel variable to hold the header using the createHeader method
-
 		// 4. Add the header component to the quizPanel
-
+		quizPanel.add(createHeader("LITERATURE"));
+		
 		// 5. Add the quizPanel to the frame
-
+		frame.add(quizPanel);
 		// 6. Use the createButton method to set the value of firstButton
-
+		Component firstbutton=createButton("200$");
 		// 7. Add the firstButton to the quizPanel
-
+		quizPanel.add(firstbutton);
 		// 8. Write the code to complete the createButton() method below. Check that your
 		// game looks like Figure 1 in the Jeopardy Handout - http://bit.ly/1bvnvd4.
-
+		
 		// 9. Use the secondButton variable to hold a button using the createButton
 		// method
 
