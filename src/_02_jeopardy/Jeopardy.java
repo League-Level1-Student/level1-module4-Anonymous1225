@@ -57,7 +57,7 @@ public class Jeopardy implements ActionListener {
 		// 5. Add the quizPanel to the frame
 		frame.add(quizPanel);
 		// 6. Use the createButton method to set the value of firstButton
-		 firstButton=createButton(200,1);
+		firstButton=createButton(200,1);
 		// 7. Add the firstButton to the quizPanel
 		quizPanel.add(firstButton);
 		// 8. Write the code to complete the createButton() method below. Check that your
@@ -67,13 +67,14 @@ public class Jeopardy implements ActionListener {
 		// method
 		secondButton=createButton(400,1);
 		// 10. Add the secondButton to the quizPanel
-
+		quizPanel.add(secondButton);
 		// 11. Add action listeners to the buttons (2 lines of code)
-
+		firstButton.addActionListener(this);
+		secondButton.addActionListener(this);
 		// 12. Write the code to complete the actionPerformed() method below
 
 		// 13. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
-		
+		thirdButton=createButton(600,1);
 		 /*
 		 * [optional] Use the showImage or playSound methods when the user answers a
 		 * question
@@ -94,9 +95,9 @@ public class Jeopardy implements ActionListener {
 		// Set the text of the button to the dollarAmount
 		it.setText("$"+String.valueOf(dollarAmount));
 		// Increment the buttonCount (this should make the layout vertical)
-		it.setLocation(row*300, Integer.valueOf(dollarAmount)+200);
+		it.setLocation(row*300-300, Integer.valueOf(dollarAmount)+200);
 		// Return your new button instead of the temporary button
-		return (it);
+		return it;
 	}
 
 	@Override
@@ -107,11 +108,17 @@ public class Jeopardy implements ActionListener {
 
 		JButton buttonPressed = (JButton) e.getSource();
 		// If the buttonPressed was the firstButton
-
+		if(buttonPressed.equals(firstButton)) {
 			// Call the askQuestion() method
-		askQuestion("This author wrote \"Green eggs and ham\" along with  \"The cat in the hat\"", "Who is Dr.Suess", 400);
+		askQuestion("This author wrote \"Green eggs and ham\" along with  \"The cat in the hat\"", "Who is Dr.Suess", 200);
+		}
+		if(buttonPressed.equals(secondButton)) {
+			askQuestion("This Rennaisance playright/poet was known as the Bard of Avon","Who was William Shakespheare",400);
+		}
+		if(buttonPressed.equals(thirdButton)) {
+			askQuestion("This fictional country was formed out of the kingdoms of Fladers and Wallonia","Where is Belgium",600);
+		}
 		// Complete the code in the askQuestion() method. When you play the game, the score should change.
-		
 		// If the buttonPressed was the secondButton
 		
 			// Call the askQuestion() method with a harder question
