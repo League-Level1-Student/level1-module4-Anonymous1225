@@ -54,19 +54,18 @@ public class Jeopardy implements ActionListener {
 		// 3. Create a JPanel variable to hold the header using the createHeader method
 		// 4. Add the header component to the quizPanel
 		quizPanel.add(createHeader("LITERATURE"));
-		
 		// 5. Add the quizPanel to the frame
 		frame.add(quizPanel);
 		// 6. Use the createButton method to set the value of firstButton
-		Component firstbutton=createButton("200$");
+		 firstButton=createButton(200,1);
 		// 7. Add the firstButton to the quizPanel
-		quizPanel.add(firstbutton);
+		quizPanel.add(firstButton);
 		// 8. Write the code to complete the createButton() method below. Check that your
 		// game looks like Figure 1 in the Jeopardy Handout - http://bit.ly/1bvnvd4.
 		
 		// 9. Use the secondButton variable to hold a button using the createButton
 		// method
-
+		secondButton=createButton(400,1);
 		// 10. Add the secondButton to the quizPanel
 
 		// 11. Add action listeners to the buttons (2 lines of code)
@@ -88,17 +87,16 @@ public class Jeopardy implements ActionListener {
 	}
 
 
-	private JButton createButton(String dollarAmount) {
+	private JButton createButton(int dollarAmount,int row) {
 		
 		// Create a new JButton
-
+		JButton it= new JButton();
 		// Set the text of the button to the dollarAmount
-
+		it.setText("$"+String.valueOf(dollarAmount));
 		// Increment the buttonCount (this should make the layout vertical)
-
+		it.setLocation(row*300, Integer.valueOf(dollarAmount)+200);
 		// Return your new button instead of the temporary button
-
-		return new JButton("temporary button");
+		return (it);
 	}
 
 	@Override
@@ -111,11 +109,11 @@ public class Jeopardy implements ActionListener {
 		// If the buttonPressed was the firstButton
 
 			// Call the askQuestion() method
- 
+		askQuestion("This author wrote \"Green eggs and ham\" along with  \"The cat in the hat\"", "Who is Dr.Suess", 400);
 		// Complete the code in the askQuestion() method. When you play the game, the score should change.
-
+		
 		// If the buttonPressed was the secondButton
-
+		
 			// Call the askQuestion() method with a harder question
 
 		// Clear the text on the button that was pressed (set the button text to nothing)
