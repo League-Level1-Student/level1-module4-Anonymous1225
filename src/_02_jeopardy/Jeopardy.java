@@ -75,6 +75,8 @@ public class Jeopardy implements ActionListener {
 
 		// 13. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
 		thirdButton=createButton(600,1);
+		quizPanel.add(thirdButton);
+		thirdButton.addActionListener(this);
 		 /*
 		 * [optional] Use the showImage or playSound methods when the user answers a
 		 * question
@@ -105,18 +107,18 @@ public class Jeopardy implements ActionListener {
 		
 		// Remove this temporary message after testing:
 		JOptionPane.showMessageDialog(null, "pressed " + ((JButton) e.getSource()).getText() + " button");
-
+		
 		JButton buttonPressed = (JButton) e.getSource();
 		// If the buttonPressed was the firstButton
 		if(buttonPressed.equals(firstButton)) {
 			// Call the askQuestion() method
-		askQuestion("This author wrote \"Green eggs and ham\" along with  \"The cat in the hat\"", "Who is Dr.Suess", 200);
+		askQuestion("This author wrote \"Green eggs and ham\" along with  \"The cat in the hat\"", "who was dr.suess", 200);
 		}
 		if(buttonPressed.equals(secondButton)) {
-			askQuestion("This Rennaisance playright/poet was known as the Bard of Avon","Who was William Shakespheare",400);
+			askQuestion("This Rennaisance playright/poet was known as the Bard of Avon","who was william shakespeare",400);
 		}
 		if(buttonPressed.equals(thirdButton)) {
-			askQuestion("This fictional country was formed out of the kingdoms of Fladers and Wallonia","Where is Belgium",600);
+			askQuestion("This fictional country was formed out of the kingdoms of Fladers and Wallonia","where is belgium",600);
 		}
 		// Complete the code in the askQuestion() method. When you play the game, the score should change.
 		// If the buttonPressed was the secondButton
@@ -132,12 +134,17 @@ public class Jeopardy implements ActionListener {
 		// Use the playJeopardyTheme() method to play music while the use thinks of an answer
 		
 		// Remove this temporary message and replace it with a pop-up that asks the user the question
-		JOptionPane.showMessageDialog(null, "this is where the question will be asked");
-		
+		String answer=JOptionPane.showInputDialog(question);
+		answer=answer.toLowerCase();
 		// Stop the theme music when they have entered their response.
 		
 		// If the answer is correct
-
+		if (answer.equals(correctAnswer)) {
+			JOptionPane.showMessageDialog(null, "Dun-dun-dang-dang");
+		}
+		else {
+			JOptionPane.showMessageDialog(null,"DUNNNNNN");
+		}
 			// Increase the score by the prizeMoney
 
 			// Pop up a message to tell the user they were correct
