@@ -77,6 +77,9 @@ public class Jeopardy implements ActionListener {
 		thirdButton=createButton(600,1);
 		quizPanel.add(thirdButton);
 		thirdButton.addActionListener(this);
+		fourthButton=createButton(800,1);
+		quizPanel.add(fourthButton);
+		fourthButton.addActionListener(this);
 		 /*
 		 * [optional] Use the showImage or playSound methods when the user answers a
 		 * question
@@ -119,6 +122,9 @@ public class Jeopardy implements ActionListener {
 		}
 		if(buttonPressed.equals(thirdButton)) {
 			askQuestion("This fictional country was formed out of the kingdoms of Fladers and Wallonia","where is belgium",600);
+		}
+		if(buttonPressed.equals(fourthButton)) {
+			askQuestion("This british city has the same last name as the man who wrote \"The call of the wild\"","where is london",800);
 		}
 		// Complete the code in the askQuestion() method. When you play the game, the score should change.
 		// If the buttonPressed was the secondButton
