@@ -6,12 +6,8 @@ public class Tutor_typer {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+		new Typing_tutor().setup();
+	}
 
-	}
-	char generateRandomLetter() {
-	    Random r = new Random();
-	    return (char) (r.nextInt(26) + 'a');
-	}
 
 }
