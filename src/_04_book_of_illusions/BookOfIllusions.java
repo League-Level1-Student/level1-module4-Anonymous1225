@@ -19,6 +19,7 @@ public class BookOfIllusions extends MouseAdapter {
 
 	// 1. Make a JFrame variable and initialize it using "new JFrame()"
 	JFrame frame = new JFrame();
+	JLabel hamser;
 	public void run() {
 		// 2. make the frame visible
 		frame.setVisible(true);
@@ -28,11 +29,10 @@ public class BookOfIllusions extends MouseAdapter {
 		// 5. make a variable to hold the location of your image. e.g. "illusion.jpg"
 		String hampter= "hampter-hamster.png";
 		// 6. create a variable of type "JLabel" but don’t initialize it yet
-		JLabel goodboi;
 		// 7. use the "loadImage..." methods below to initialize your JLabel
-		goodboi=loadImageFromComputer(hampter);
+		hamser=loadImageFromComputer(hampter);
 		// 8. add your JLabel to the frame
-		frame.add(goodboi);
+		frame.add(hamser);
 		// 9. call the pack() method on the frame
 		frame.pack();
 		// 10. add a mouse listener to your frame (hint: use *this*)
@@ -40,14 +40,12 @@ public class BookOfIllusions extends MouseAdapter {
 	}
 	public void mousePressed(MouseEvent e) {
 		// 11. Print "clicked!" to the console when the mouse is pressed
-		System.out.println("heeeyy");
 		// 12. remove everything from the frame that was added earlier
-		frame.removeAll();
+		frame.remove(hamser);
 		// 13. load a new image like before (this is more than one line of code)
 		String sadhampter="sad-hamster-sad.png";
-		JLabel sadboi;
-		sadboi=loadImageFromComputer(sadhampter);
-		frame.add(sadboi);
+		hamser=loadImageFromComputer(sadhampter);
+		frame.add(hamser);
 		// 14. pack the frame
 		frame.pack();
 	}
@@ -59,6 +57,7 @@ public class BookOfIllusions extends MouseAdapter {
 	 */
 	public JLabel loadImageFromComputer(String fileName) {
 		URL imageURL = getClass().getResource(fileName);
+		System.out.println(imageURL);
 		Icon icon = new ImageIcon(imageURL);
 		return new JLabel(icon);
 	}
