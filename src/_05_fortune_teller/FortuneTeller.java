@@ -22,6 +22,31 @@ public class FortuneTeller extends JPanel implements Runnable, MouseListener {
     FortuneTeller() throws Exception {
         // 1. Choose an image for your fortune teller and put it in your default package
         fortuneTellerImage = ImageIO.read(getClass().getResource("spunchbob.png"));
+        //next time you should sign out of github
+        //next time you should sign out of github
+        //next time you should sign out of github
+        //next time you should sign out of github
+        //next time you should sign out of github
+        //next time you should sign out of github
+        //next time you should sign out of github
+        //next time you should sign out of github
+        //next time you should sign out of github
+        //next time you should sign out of github
+        //next time you should sign out of github
+        //next time you should sign out of github
+        //next time you should sign out of github
+        //next time you should sign out of github
+        //next time you should sign out of github
+        //next time you should sign out of github
+        //next time you should sign out of github
+        //next time you should sign out of github
+        //next time you should sign out of github
+        //next time you should sign out of github
+        //next time you should sign out of github
+        //next time you should sign out of github
+        //next time you should sign out of github
+        //next time you should sign out of github
+        //next time you should sign out of github
         // 2. Adjust the frameWidth and frameHeight variables to fit your image nicely (doesn’t need a new line of code)
         
         // 3. Complete the begin() method in the FortuneTellerRunner class
