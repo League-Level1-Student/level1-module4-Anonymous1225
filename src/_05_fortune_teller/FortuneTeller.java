@@ -5,10 +5,13 @@ import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
+import java.util.Random;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 import game_tools.Sound;
 
@@ -36,12 +39,11 @@ public class FortuneTeller extends JPanel implements Runnable, MouseListener {
         int mouseY = e.getY();
         
         // 5. Print the mouseX variable
-        System.out.println(mouseX);
         // 6. Add the mouseY variable to the previous line so that it prints out too (no new line)
         
         // 7. Adjust your secret location co-ordinates here:
-        int secretLocationX = 0;
-        int secretLocationY = 0;
+        int secretLocationX = 300;
+        int secretLocationY = 550;
         
         // If the mouse co-ordinates and secret location are close, we'll let them ask a question.
         if (areClose(mouseX, secretLocationX) && areClose(mouseY, secretLocationY)) {
@@ -51,7 +53,24 @@ public class FortuneTeller extends JPanel implements Runnable, MouseListener {
             // 9. Play the sound
             
             // 10. Insert your completed Magic 8 ball code here
-            
+        	int randy=new Random().nextInt(4);
+
+        	JOptionPane.showInputDialog("What do you want?");
+
+        	if(randy==0) {
+        		JOptionPane.showMessageDialog(null, "Ill look into it, but you gotta give me 50 benjamins within the next week or else");
+        		JOptionPane.showMessageDialog(null, "WHERE'S MAH' MONEY *Grabs tommygun*");
+        		JOptionPane.showMessageDialog(null, "*BANG*");
+        	}
+        	if(randy==1) {
+        		JOptionPane.showMessageDialog(null, "Join our ranks o'course");
+        	}
+        	if(randy==2) {
+        		JOptionPane.showMessageDialog(null, "I gotta talk to da boss");
+        	}
+        	if(randy==3) {
+        		JOptionPane.showMessageDialog(null, "I tell yah how to get da boss for me");
+        	}
         }
 
     }

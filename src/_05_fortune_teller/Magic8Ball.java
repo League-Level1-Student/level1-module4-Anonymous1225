@@ -21,8 +21,9 @@ public class Magic8Ball {
 
 	// 5. If the random number is 0
 	if(randy==0) {
-		JOptionPane.showMessageDialog(null, "Ill protect you, but you gotta give me 50 benjamins within the next week or else");
-		JOptionPane.showMessageDialog(null, "WHERE'S MAH' MONEY *Grabs tommygun* *BANG*");
+		JOptionPane.showMessageDialog(null, "Ill look into it, but you gotta give me 50 benjamins within the next week or else");
+		JOptionPane.showMessageDialog(null, "WHERE'S MAH' MONEY *Grabs tommygun*");
+		JOptionPane.showMessageDialog(null, "*BANG*");
 	}
 	if(randy==1) {
 		JOptionPane.showMessageDialog(null, "Join our ranks o'course");
@@ -31,7 +32,7 @@ public class Magic8Ball {
 		JOptionPane.showMessageDialog(null, "I gotta talk to da boss");
 	}
 	if(randy==3) {
-		JOptionPane.showMessageDialog(null, "I te'll yah how to get dah boss for me");
+		JOptionPane.showMessageDialog(null, "I tell yah how to get da boss for me");
 	}
 	// -- tell the user "Yes"
 
