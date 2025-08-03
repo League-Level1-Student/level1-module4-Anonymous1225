@@ -13,7 +13,8 @@ import javax.swing.JOptionPane;
 public class TVShowEpisodeInfoDisplayer {
 	
 	public TVShowEpisodeInfoDisplayer() {
-		
+		String hi = JOptionPane.showInputDialog("enter a title");
+		System.out.println(getShowEpisodeData(hi));
 	}
 
 	

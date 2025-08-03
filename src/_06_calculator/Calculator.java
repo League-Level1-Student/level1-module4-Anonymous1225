@@ -14,55 +14,83 @@ public class Calculator implements ActionListener {
 	JTextField waffle;
 	JButton gigi = new JButton("Add");
 	JButton martha = new JButton("Subtract");
-	JButton Polly = new JButton("Subtract");
+	JButton nugget = new JButton("Multiply");
+	JButton pheobe = new JButton("Divide");
 	public Calculator() {
 		int op=0;
-		winnie = new JTextField();
-		waffle = new JTextField();
+		winnie = new JTextField(5);
+		waffle = new JTextField(5);
 		JFrame beth = new JFrame();
 		JPanel polly = new JPanel();
-
-
 		beth.add(polly);
 		polly.add(winnie);
 		polly.add(gigi);
-		polly.add(waffle);
+		polly.add(nugget);
+		polly.add(pheobe);
 		gigi.addActionListener(this);
 		polly.add(martha);
 		martha.addActionListener(this);
+		nugget.addActionListener(this);
+		pheobe.addActionListener(this);
+		polly.add(waffle);
 		beth.pack();
 		beth.setVisible(true);
 
 	}
-	public  int add(int x, int y){
-		int sum=x+y;
+	public  double add(double x, double y){
+		double sum=x+y;
 		return sum;
 		
 	}
-	public  int multiply(int p1, int p2) {
-		int answer=0;
-		for(int i = 0; i < p2; i++) {
-			add(answer, p1);
-		}
+	public  double multiply(double p1, double p2) {
+		double answer=p1*p2;
 		return answer;
 	}
-	public  int subtract(int x, int y) {
-		int subber=y*-1;
-		int answer=x+subber;
+	public  double subtract(double x, double y) {
+		double subber=y*-1;
+		double answer=x+subber;
 		return answer;
+	}
+	public double divide(double x, double y) {
+		double quotient=x/y;
+		return quotient;
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		JButton buttonPressed = (JButton) e.getSource();
-		if (buttonPressed.equals(gigi)){
-			System.out.println("HIIIIII");
+		if (buttonPressed == gigi){
 			String v1=winnie.getText();
 			String v2=waffle.getText();
-			int iv1 = Integer.parseInt(v1);
-			int iv2 = Integer.parseInt(v2);
-			int sun= add(iv1,iv2);
-			System.out.println(sun);
+			double dv1 = Double.parseDouble(v1);
+			double dv2 = Double.parseDouble(v2);
+			double sum= add(dv1,dv2);
+			JOptionPane.showMessageDialog(null, sum);
+		}
+		if (buttonPressed == martha){
+			String v1=winnie.getText();
+			String v2=waffle.getText();
+			double iv1 = Integer.parseInt(v1);
+			double iv2 = Integer.parseInt(v2);
+			double difference= subtract(iv1,iv2);
+			JOptionPane.showMessageDialog(null,difference);
+		}
+		if (buttonPressed == nugget) {
+			String v1=winnie.getText();
+			String v2=waffle.getText();
+			double iv1 = Double.parseDouble(v1);
+			double iv2 = Double.parseDouble(v2);
+			double product = multiply(iv1,iv2);
+			
+			JOptionPane.showMessageDialog(null,Math.round(product));
+		}
+		if (buttonPressed == pheobe) {
+			String v1=winnie.getText();
+			String v2=waffle.getText();
+			double dv1 = Double.parseDouble(v1);
+			double dv2 = Double.parseDouble(v2);
+			double quotient = divide(dv1,dv2);
+			JOptionPane.showMessageDialog(null,quotient);
 		}
 	}
 }
