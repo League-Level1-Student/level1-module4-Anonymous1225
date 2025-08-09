@@ -16,11 +16,6 @@ public class TVShowEpisodeInfoDisplayer {
 		String hi = JOptionPane.showInputDialog("enter a title");
 		System.out.println(getShowEpisodeData(hi));
 	}
-
-	
-	
-	
-
 /////////////////////////DO NOT MODIFY ANY CODE BELOW THIS LINE//////////////////////////////////////////
 	
 	/**

@@ -1,6 +1,10 @@
 package _08_pig_latin;
 
+import javax.swing.JOptionPane;
+
 public class PigLatinTranslator {
+	
+	
     /**
      * Method to translate a english to pig latin.
      * 
@@ -17,7 +21,7 @@ public class PigLatinTranslator {
                 latin = latin + s.charAt(i);
                 i++;
             }
-            // If there aren't any words left, stop.
+            // If there aren't any words left, stop.mt
             if (i >= s.length())
                 break;
             // Otherwise we're at the beginning of a word.
