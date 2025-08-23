@@ -1,16 +1,19 @@
 package _08_pig_latin;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 
-public class Pig_gui {
-	static JFrame Framing;
-	static JPanel Perjury;
-	static JButton Battery;
-	static JButton Blackmail;
-	static JButton Bombing;
-	static JTextField Fraud;
-	static JTextField Forgery;
-	public static void gui() {
+public class Pig_gui implements ActionListener {
+	JFrame Framing;
+	JPanel Perjury;
+	JButton Battery;
+	JButton Blackmail;
+	JButton Bombing;
+	JTextField Fraud;
+	JTextField Forgery;
+	public void gui() {
 		Framing = new JFrame();
 		Perjury = new JPanel();
 		Battery = new JButton();
@@ -26,6 +29,24 @@ public class Pig_gui {
 		Perjury.add(Forgery);
 		Framing.setVisible(true);
 		Blackmail.setText(">>>");
-		
+		Bombing.setText("<<<");
+		Forgery.setText("Speak");
+		Battery.addActionListener(this);
+		Blackmail.addActionListener(this);
+		Bombing.addActionListener(this);
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		JButton buttonPressed = (JButton) e.getSource();
+		if (buttonPressed.equals(Blackmail)) {
+			
+		}
+		if (buttonPressed.equals(Battery)) {
+			
+		}
+		if (buttonPressed.equals(Bombing)) {
+			
+		}
 	}
 }
