@@ -1,3 +1,4 @@
+
 package _10_slot_machine;
 
 import java.awt.Component;
