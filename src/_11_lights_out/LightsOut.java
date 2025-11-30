@@ -62,9 +62,9 @@ public class LightsOut implements MouseListener {
 	public void mouseClicked(MouseEvent e) {
 		/** PART 2: TOGGLE NEIGHBORING LIGHTS **/
 		// 1. Get the light that was clicked on `(JLabel) e.getSource`
-		System.out.println("UwUOwO:3;3:}");
+		System.out.println(e.getSource());
 		// 2. Get the number (position) of the light
-
+		
 		// 3. Now use the makeMove method to code which lights turn on and off.
 
 		// 4.Check if the player has won (e.g. all the lights are off)
