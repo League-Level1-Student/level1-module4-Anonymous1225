@@ -18,7 +18,7 @@ public class Slot_machine {
 		JFrame frame = new JFrame();
 		JPanel panel = new JPanel();
 		int[] e = new int[3];
-		int balance = 50;
+		int balance = 10000;
 		int bet = 0;
 		frame.add(panel);
 		for (int z = 0; z < 10; z++) {
