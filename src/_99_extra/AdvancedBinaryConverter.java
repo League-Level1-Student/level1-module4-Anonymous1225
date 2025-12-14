@@ -35,7 +35,7 @@ public class AdvancedBinaryConverter implements ActionListener {
         convertButton = new JButton();
 
         // 1. Make the frame show up
-
+        
         // 2. Give your frame a title
 
         // 3. Add your panel to the frame

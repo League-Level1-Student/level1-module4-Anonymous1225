@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -25,24 +26,30 @@ import javax.swing.JPanel;
 public class LightsOut implements MouseListener, ActionListener {
 
 	JPanel gamePanel = new JPanel();
-
+	JLabel hoomans[]= new JLabel[25];
 	public LightsOut() {
-
+		Random ran = new Random();
 		/** PART 1. CREATE YOUR LIGHT BOARD **/
 		//1. Make your gamePanel a 5x5 grid with setLayout(new GridLayout(5, 5));
 		GridLayout grid = new GridLayout(5,5);
 		JFrame frame = new JFrame();
+		JButton reset = new JButton();
+		reset.setText("RESET");
 			//2. Add 25 JLabels to your gamePanel (these are your lights)
-		JLabel hoomans[]= new JLabel[25];
 		gamePanel.setLayout(grid);
 		for (int i=0; i<25;i++) {
 			hoomans[i]= new JLabel();
-			hoomans[i].setText("hoomans"+String.valueOf(i));
+			hoomans[i].setText(String.valueOf(i));
 			gamePanel.add(hoomans[i]);
-			hoomans[i].setBackground(Color.LIGHT_GRAY);
+			int hi =ran.nextInt(2);
+			if (hi==0) {
+				hoomans[i].setBackground(Color.WHITE);
+			}
+			else {
+				hoomans[i].setBackground(Color.LIGHT_GRAY);
+			}
 			hoomans[i].setOpaque(true);
 			hoomans[i].addMouseListener(this);
-			System.out.println(hoomans[i].getText());
 		}
 		frame.setVisible(true);
 		frame.add(gamePanel);
@@ -68,20 +75,26 @@ public class LightsOut implements MouseListener, ActionListener {
 		// 2. Get the number (position) of the light
 		JLabel button = (JLabel) e.getSource();
 		String a = button.getText();
-		a= a.substring(7);
 		int aa = Integer.parseInt(a);
 		// 3. Now use the makeMove method to code which lights turn on and off.
 		makeMove(aa);
 		// 4.Check if the player has won (e.g. all the lights are off)
 		// ---- HINT: use `getLightAtPosition` to get the light at each position
 		// ---------- use 'getBackground' to get the light color
+		int ba=0;
 		for (int z=0; z<25;z++) {
-			
+			if(hoomans[z].getBackground().equals(Color.LIGHT_GRAY)) {
+				ba++;
+			}
 		}
+		if (ba==25) {
+			System.out.println("YOU WON :D :D :D :D");
+		}
+		
 		/** PART 3: RANDOMIZE YOUR BOARD **/
 		// Now that your game works can you make the game start with some lights on?
-
-	}
+		
+}
 
 	void makeMove(int pos) {
 		toggle((JLabel) gamePanel.getComponent(pos));
@@ -104,11 +117,11 @@ public class LightsOut implements MouseListener, ActionListener {
 	}
 
 	void toggle(JLabel label) {
-		if (label.getBackground() == Color.WHITE) {
-			label.setBackground(Color.LIGHT_GRAY);
+		if (label.getBackground() == Color.LIGHT_GRAY) {
+			label.setBackground(Color.WHITE);
 
 		} else {
-			label.setBackground(Color.WHITE);
+			label.setBackground(Color.LIGHT_GRAY);
 		}
 	}
 
