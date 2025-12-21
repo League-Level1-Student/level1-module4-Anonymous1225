@@ -35,21 +35,23 @@ public class LightsOut implements MouseListener, ActionListener {
 		JFrame frame = new JFrame();
 		JButton reset = new JButton();
 		reset.setText("RESET");
-			//2. Add 25 JLabels to your gamePanel (these are your lights)
+		reset.setVisible(true);
+		frame.add(reset);
+		//2. Add 25 JLabels to your gamePanel (these are your lights)
 		gamePanel.setLayout(grid);
 		for (int i=0; i<25;i++) {
 			hoomans[i]= new JLabel();
 			hoomans[i].setText(String.valueOf(i));
 			gamePanel.add(hoomans[i]);
-			int hi =ran.nextInt(2);
-			if (hi==0) {
-				hoomans[i].setBackground(Color.WHITE);
-			}
-			else {
-				hoomans[i].setBackground(Color.LIGHT_GRAY);
-			}
+			hoomans[i].setBackground(Color.WHITE);
 			hoomans[i].setOpaque(true);
 			hoomans[i].addMouseListener(this);
+		}
+		for (int g=0; g<25;g++) {
+			int randy= ran.nextInt(2);
+			if(randy==0) 
+			makeMove(g);
+			
 		}
 		frame.setVisible(true);
 		frame.add(gamePanel);
@@ -71,7 +73,6 @@ public class LightsOut implements MouseListener, ActionListener {
 	public void mouseClicked(MouseEvent e) {
 		/** PART 2: TOGGLE NEIGHBORING LIGHTS **/
 		// 1. Get the light that was clicked on `(JLabel) e.getSource`
-		System.out.println(e.getSource());
 		// 2. Get the number (position) of the light
 		JLabel button = (JLabel) e.getSource();
 		String a = button.getText();
@@ -88,7 +89,7 @@ public class LightsOut implements MouseListener, ActionListener {
 			}
 		}
 		if (ba==25) {
-			System.out.println("YOU WON :D :D :D :D");
+			System.out.println("YOU WON :D :D :D :D :D :D :D :D :D :D :D :D :D :D :D :D :D :D :D :D :D :D :D :D :3 :D :D :D :D :D :D :D :D :D");
 		}
 		
 		/** PART 3: RANDOMIZE YOUR BOARD **/
