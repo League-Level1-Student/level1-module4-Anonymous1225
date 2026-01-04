@@ -35,21 +35,21 @@ public class AdvancedBinaryConverter implements ActionListener {
         convertButton = new JButton();
 
         // 1. Make the frame show up
-        
+        frame.setVisible(true);
         // 2. Give your frame a title
-
+        frame.setTitle("मुझे तुमसे प्यार है");
         // 3. Add your panel to the frame
-
+        frame.add(panel);
         // 4. Call the addObjectToPanel() method to add inputTextField to row 0, column 0
         //    of the panel and span 2 columns, addObjectToPanel(inputTextField, 0, 0, 2);
-
+        addObjectToPanel(inputTextField, 0, 0, 2);
         // 5. Set the convertButton text to "convert"
-
+        convertButton.setText("convert");
         // 6. Add an action listener to convertButton
-
+        convertButton.addActionListener(this);
         // 7. Call the addObjectToPanel() method to add convertButton to row 1, column 0
         //    of the panel with a cellWidth of 2
-
+        addObjectToPanel(convertButton, 1, 0, 2);
         // 8. Create a new JLabel with the text "ASCII:"
 
         // 9. Call the addObjectToPanel() method to add the new label to row 2, column 0

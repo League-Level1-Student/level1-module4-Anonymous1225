@@ -71,6 +71,7 @@ public class LightsOut implements MouseListener, ActionListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
+		Random ran = new Random();
 		/** PART 2: TOGGLE NEIGHBORING LIGHTS **/
 		// 1. Get the light that was clicked on `(JLabel) e.getSource`
 		// 2. Get the number (position) of the light
@@ -89,7 +90,17 @@ public class LightsOut implements MouseListener, ActionListener {
 			}
 		}
 		if (ba==25) {
-			System.out.println("YOU WON :D :D :D :D :D :D :D :D :D :D :D :D :D :D :D :D :D :D :D :D :D :D :D :D :3 :D :D :D :D :D :D :D :D :D");
+			System.out.println("YOU WON");
+			int r = ran.nextInt(20);
+			for (int gb=0; gb<r+21; gb++) {
+				int rr = ran.nextInt(30);
+				if(rr==1) {
+					System.out.print(" :3");
+				}
+				else {
+					System.out.print(" :D");
+				}
+			}		
 		}
 		
 		/** PART 3: RANDOMIZE YOUR BOARD **/
