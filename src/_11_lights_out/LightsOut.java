@@ -90,19 +90,19 @@ public class LightsOut implements MouseListener, ActionListener {
 			}
 		}
 		if (ba==25) {
-			System.out.println("YOU WON");
-			int r = ran.nextInt(20);
-			for (int gb=0; gb<r+21; gb++) {
-				int rr = ran.nextInt(30);
+			String uwon = ("YOU WON!!!");
+			for (int gb=0; gb<25; gb++) {
+				int rr = ran.nextInt(20);
 				if(rr==1) {
-					System.out.print(" :3");
+					uwon = uwon+(" :3");
 				}
 				else {
-					System.out.print(" :D");
+					uwon = uwon+(" :D");
 				}
-			}		
+			}
+			System.out.println(uwon);
 		}
-		
+
 		/** PART 3: RANDOMIZE YOUR BOARD **/
 		// Now that your game works can you make the game start with some lights on?
 		
